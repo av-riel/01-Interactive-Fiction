@@ -24,5 +24,6 @@ Game Technology 01 Exercises
   -captain logs
   -crewmates that move location/change interactions based on items in inventory
   -Kevin actions and lore
+  -all items collected ending that leads to captain logs
 
 # Created by Avriel Donaldson
