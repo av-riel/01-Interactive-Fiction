@@ -1,5 +1,6 @@
 # 01-Interactive-Fiction
 Interactive Fiction project for IU game technology class.
+Project Started: 09/06/21
 
 # Working Title: A Spacedog Named Steve
 A dog named Steve explores a spaceship crewed by his owner Kevin and the other crewmates. He collects items to take to Kevin and keycards to access locked crewmate rooms, while discovering what happened to Kevin.
