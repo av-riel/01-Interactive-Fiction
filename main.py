@@ -111,7 +111,7 @@ world = {
       "name": "EAST HALLWAY",
       "tags": "",
       "id": "6",
-      "text": "A hallway on the East side of the ship, leads to the airlock and excercise room.\n\n[[Northern Hallway]] \n[[Security Room]] \n[[Excercise Room]] \n[[Gallery]] \n[[Airlock]] \n[[Electrical Room]] \n[[Storage Room]] \n[[Southern Hallway]]",
+      "text": "A hallway on the East side of the ship, leads to the airlock and excercise room.\n\n[[NORTHERN HALLWAY]] \n[[SECURITY ROOM]] \n[[EXERCISE ROOM]] \n[[GALLERY]] \n[[AIRLOCK]] \n[[ELECTRICAL ROOM]] \n[[STORAGE ROOM]] \n[[SOUTHERN HALLWAY]]",
       "links": [
         {
           "linkText": "NORTHERN HALLWAY",
@@ -680,8 +680,7 @@ def find_current_location(location_label):
 
 def render(current_location, keycards, items):
 	if "name" in current_location and "cleanText" in current_location:
-		#print("Items: " + str(items) + ", Keycards: " + str(keycards))
-		print("Items: {},  Keycards: {}".format(items, keycards))
+		print("Keycards: {},  Items: {}".format(items, keycards))
 		print("You are at " + str(current_location["name"]))
 		print(current_location["cleanText"] + "\n")
 
@@ -714,40 +713,39 @@ room_patrick = False
 room_robin = False
 
 print("A Spacedog Named Steve" + "\n" + "An interactive fiction game by Avriel Donaldson" + "\n")
-time.sleep(2.5)
+time.sleep(1.5)
 emote()
 
 while True:
+	if response == "QUIT":
+		break
 	location_label = update(current_location, location_label, response)
 	current_location = find_current_location(location_label)
 	if "keycard" in current_location:
+		keycards = keycards + 1
 		if "keycard" == "Charlie's Keycard":
 			if room_charlie == False:
-				keycards = keycards + 1
 				room_charlie = True
 				print("Charlie's Keycard added to inventory.")
-			else:
+			if room_charlie == True:
 				print("Keycard already in inventory")
 		if "keycard" == "Frankie's Keycard":
 			if room_frankie == False:
-				keycards = keycards + 1
 				room_frankie = True
 				print("Frankie's Keycard added to inventory.")
-			else:
+			if room_frankie == True:
 				print("Keycard already in inventory")
 		if "keycard" == "Patrick's Keycard":
 			if room_patrick == False:
-				keycards = keycards + 1
 				room_patrick = True
 				print("Chef's Keycard added to inventory.")
-			else:
+			if room_patrick == True:
 				print("Keycard already in inventory")
 		if "keycard" == "Robin's Keycard":
 			if room_robin == False:
-				keycards = keycards + 1
 				room_robin = True
 				print("Robin's Keycard added to inventory.")
-			else:
+			if room_robin == True:
 				print("Keycard already in inventory")
 
 	if "item" in current_location:
